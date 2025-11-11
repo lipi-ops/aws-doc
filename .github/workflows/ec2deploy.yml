@@ -7,7 +7,7 @@ on:
 
 jobs:
   terraform:
-    runs-on: label-1  # Or use 'ubuntu-latest' for GitHub-hosted runner
+    runs-on: label-1   # Or use 'ubuntu-latest' for GitHub-hosted runner
 
     steps:
       - name: Checkout code
