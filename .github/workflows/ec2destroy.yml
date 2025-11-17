@@ -18,7 +18,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: aws-doc   # 👈 ensure this matches folder where backend.tf + main.tf are
+        working-directory: aws-doc   
 
       - name: Terraform Plan 
         run: terraform plan -destroy -out=tfplan
