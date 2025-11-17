@@ -11,3 +11,4 @@ resource "aws_instance" "example" {
     Name = "GitHubActionsEC2"
   }
 }
+
