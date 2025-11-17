@@ -19,11 +19,11 @@ jobs:
          
 
       - name: Terraform Plan 
-        run: terraform plan -destroy -out=tfplan
+        run: terraform plan 
       
 
       - name: Terraform Destroy
-        run: terraform destroy -auto-approve tfplan
+        run: terraform destroy -auto-approve 
       
 
 
