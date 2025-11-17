@@ -1,4 +1,4 @@
-name: 'Terraform EC2 Deploy1'
+name: 'Terraform EC2 Deploy'
 'on':
   push:
     branches:
