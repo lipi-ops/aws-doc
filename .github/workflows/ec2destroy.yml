@@ -20,12 +20,12 @@ jobs:
         run: terraform init
         working-directory: aws-doc   # 👈 ensure this matches folder where backend.tf + main.tf are
 
-      - name: Terraform Plan Destroy
+      - name: Terraform Plan 
         run: terraform plan -destroy -out=tfplan
         working-directory: aws-doc
 
-      - name: Terraform Apply Destroy
-        run: terraform desstroy -auto-approve tfplan
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve tfplan
         working-directory: aws-doc
 
 
