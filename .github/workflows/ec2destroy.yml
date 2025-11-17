@@ -16,14 +16,14 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: aws-doc   
+         
 
       - name: Terraform Plan 
         run: terraform plan -destroy -out=tfplan
-        working-directory: aws-doc
+      
 
       - name: Terraform Destroy
         run: terraform destroy -auto-approve tfplan
-        working-directory: aws-doc
+      
 
 
