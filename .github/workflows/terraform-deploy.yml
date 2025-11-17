@@ -1,9 +1,6 @@
 name: Terraform EC2 Deploy
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:   # allows manual trigger from Actions tab
 
 jobs:
