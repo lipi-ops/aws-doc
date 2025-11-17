@@ -1,22 +1,24 @@
 name: Terraform EC2 Deploy
 
-on:
+---
+name: 'Terraform EC2 Deploy'
+'on':
   push:
     branches:
-      - main
-
+      - 'main'
 jobs:
   terraform:
-    runs-on: label-1
+    runs-on: 'label-1'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: 'Checkout code'
+        uses: 'actions/checkout@v3'
+      - name: 'Setup Terraform'
+        uses: 'hashicorp/setup-terraform@v2'
+      - name: 'Terraform Init'
+        run: 'terraform init'
+      - name: 'Terraform Plan'
+        run: 'terraform plan -var="aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" \ -var="aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"'
+      - name: 'Terraform Apply'
+        run: 'terraform apply -auto-approve -var="aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" \ -var="aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"'
 
-      - name: Terraform Init
-        run: terraform init
 
-      - name: Terraform Plan
-        run: terraform plan -var="aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -var="aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve -var="aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -var="aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
