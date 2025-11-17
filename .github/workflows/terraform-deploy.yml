@@ -13,12 +13,12 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: aws-doc 
+       
 
       - name: Terraform Plan
-        run: terraform plan -out=tfplan
-        working-directory: aws-doc 
+        run: terraform plan 
+        
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan
-        working-directory: aws-doc 
+        run: terraform apply -auto-approve 
+        
