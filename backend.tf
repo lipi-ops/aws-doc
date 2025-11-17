@@ -2,7 +2,7 @@
         "backend": {
             "s3": {
                 "bucket": "terraform-lipi-test",
-                "key": "s3://terraform-lipi-test/mydoc/",
+                "key": "mydoc/terraform.tfstate",
                 "region": "ap-south-1"
             }
         }
